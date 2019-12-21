@@ -1308,6 +1308,8 @@ def _xgboost_hp_space(
                     if reg_lambda is None else reg_lambda),
         scale_pos_weight=scale_pos_weight,
         base_score=base_score,
+        n_jobs=-1,
+        tree_method='gpu_hist',
         seed=_random_state(name_func('rstate'), random_state)
     )
     return hp_space
